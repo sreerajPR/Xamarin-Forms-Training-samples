@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationPageDemo.Page3">
+    <ContentPage.Content>
+    <StackLayout Spacing="20">
+      <Label x:Name="label" Text="This is the third page!" 
+           HorizontalOptions="Center" />
+      <Button x:Name="navigateBackButton" Text="Move to Previous Page" HorizontalOptions="Center" HeightRequest="50" BackgroundColor="Red"/>
+      <Button x:Name="navigateToRootButton" Text="Move to Root Page" HorizontalOptions="Center" HeightRequest="50" BackgroundColor="Red"/>
+      <Button x:Name="insertPageBefore" Text="Insert A Page" HorizontalOptions="Center" HeightRequest="50" BackgroundColor="Red"/>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

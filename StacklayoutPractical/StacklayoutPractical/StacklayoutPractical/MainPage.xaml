@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StacklayoutPractical"
+             x:Class="StacklayoutPractical.MainPage">
+  <ScrollView>
+    <StackLayout BackgroundColor="Maroon">
+      <BoxView BackgroundColor="Gray" HeightRequest="150"/>
+      <BoxView WidthRequest="60" HeightRequest="60"  BackgroundColor="Red" HorizontalOptions="Center"/>
+      <Label Text="User Name" FontSize="Large" TextColor="White" HorizontalOptions="Center"/>
+      <Entry Text="Bio + Hashtags" TextColor="White" BackgroundColor="Transparent" Margin="0,20,0,0"/>
+      <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="5">
+        <ContentView BackgroundColor="Black" HeightRequest="40" WidthRequest="40"/>
+        <Label VerticalOptions="Center" Text="Accent Color" TextColor="Black"/>
+        <ContentView BackgroundColor="Maroon" HeightRequest="40" WidthRequest="40" HorizontalOptions="EndAndExpand"/>
+        <Label VerticalOptions="Center" Text="Primary Color" TextColor="Black"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+        <Label VerticalOptions="Center" Text="Age:" WidthRequest="100" TextColor="White"/>
+        <Entry  TextColor="White" HorizontalOptions="FillAndExpand" Text="35"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label VerticalOptions="Center" Text="Interests:" WidthRequest="100" TextColor="White"/>
+        <Entry  TextColor="White" HorizontalOptions="FillAndExpand" Text="Xamarin.Forms"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+        <Label VerticalOptions="Center" Text="Ask me about:" WidthRequest="100" TextColor="White"/>
+        <Entry  TextColor="White" HorizontalOptions="FillAndExpand" Text="Xamarin, C#, .Net, Mono..."/>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

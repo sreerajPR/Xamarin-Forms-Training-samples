@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MessagingCenterDemo"
+             x:Class="MessagingCenterDemo.MainPage">
+
+  <StackLayout Spacing="30">
+    <Entry x:Name="NameField" HorizontalOptions="FillAndExpand"/>
+    <Button x:Name="EnterButton" Text="Enter Name" BackgroundColor="Green" HeightRequest="30" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+    <Label  x:Name="NameLabel"
+           HorizontalOptions="CenterAndExpand" HeightRequest="50" />
+    <Button x:Name="NextPageButton" Text="Move To Next Page" BackgroundColor="Green" HeightRequest="30" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+  </StackLayout>
+
+</ContentPage>
