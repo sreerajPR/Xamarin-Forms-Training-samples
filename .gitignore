@@ -61,3 +61,7 @@
 /AbsoluteLayoutDemo/AbsoluteLayoutDemo/AbsoluteLayoutDemo/obj
 /AbsoluteLayoutDemo/AbsoluteLayoutDemo/AbsoluteLayoutDemo.Android/obj
 /AbsoluteLayoutDemo/AbsoluteLayoutDemo/AbsoluteLayoutDemo.iOS/obj
+/AbsoluteLayoutDemo/.vs/AbsoluteLayoutDemo/DesignTimeBuild
+/AbsoluteLayoutDemo/AbsoluteLayoutDemo/AbsoluteLayoutDemo/bin/Debug/netstandard2.0
+/AbsoluteLayoutDemo/AbsoluteLayoutDemo/AbsoluteLayoutDemo.iOS/bin/iPhoneSimulator/Debug
+/AbsoluteLayoutDemo/AbsoluteLayoutDemo/AbsoluteLayoutDemo.iOS/AbsoluteLayoutDemo.iOS.csproj.user
