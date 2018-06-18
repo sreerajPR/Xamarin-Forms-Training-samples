@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RelativeLayoutPRactical"
+             x:Class="RelativeLayoutPRactical.MainPage">
+
+  <RelativeLayout BackgroundColor="Maroon">
+    <BoxView x:Name="topBox"
+      BackgroundColor="Gray" HeightRequest="150"
+      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Factor=1, Property= Width}"/>
+    <BoxView x:Name="redRound" BackgroundColor="Red" HeightRequest="60" WidthRequest="60" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=.5, Constant = -30}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=topBox,Property=Height, Factor=1, Constant=-30}" />
+    <Label  x:Name="userNameLabel" Text="User Name" TextColor="White" FontSize="Large" HorizontalTextAlignment="Center" HeightRequest="30" 
+           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=redRound, Property=Y,Factor= 1,Constant= 70}"
+           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property= Width, Factor=1}"/>
+    <Entry x:Name="entryField" Text="Bio + HashTags" TextColor="White" HeightRequest="40" BackgroundColor="Transparent"
+           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=userNameLabel, Property=Y,Factor= 1,Constant= 40}"
+           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property= Width, Factor=1}"/>
+    <BoxView x:Name="whiteBox" BackgroundColor="White" HeightRequest="50"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=entryField, Property=Y,Factor= 1,Constant= 50}"
+             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property= Width, Factor=1}"/>
+    <BoxView x:Name="blackBox" BackgroundColor="Black" WidthRequest="40" HeightRequest="40" 
+             RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=5}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=whiteBox, Property=Y,Factor= 1,Constant= 5}"/>
+    <Label Text="Accent Color" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center"
+           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName= blackBox, Factor=1,Constant=50,Property=X}" 
+           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=whiteBox, Factor=1,Constant=5,Property=Y}" 
+           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=whiteBox, Constant=-10, Property=Height,Factor=1}"/>
+    <BoxView x:Name="redBox" BackgroundColor="Red" WidthRequest="40" HeightRequest="40" 
+             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Factor=.5, Property=Width}"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=whiteBox, Property=Y,Factor= 1,Constant= 5}"/>
+    <Label Text="Primary Color" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center"
+           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName= redBox, Factor=1,Constant=50,Property=X}" 
+           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=whiteBox, Factor=1,Constant=5,Property=Y}" 
+           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=whiteBox, Constant=-10, Property=Height,Factor=1}"/>
+
+    <Grid x:Name="whiteGrid" BackgroundColor="White" HeightRequest="50" ColumnSpacing="5" Padding="5,5,0,0"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=whiteBox, Property=Y,Factor= 1,Constant= 60}"
+             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property= Width, Factor=1}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="40"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="40"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40"/>
+      </Grid.RowDefinitions>
+      <BoxView BackgroundColor="Black"/>
+      <Label Text="Accent Color" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1"/>
+      <BoxView BackgroundColor="Red" Grid.Column="2"/>
+      <Label Text="Primary Color" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="3"/>
+    </Grid>
+
+    <Grid Padding="5,0,0,0"
+             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=whiteGrid, Property=Y,Factor= 1,Constant= 60}"
+             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property= Width, Factor=1}">
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40"/>
+        <RowDefinition Height="40"/>
+        <RowDefinition Height="40"/>
+      </Grid.RowDefinitions>
+
+      <Label Text="Age:" VerticalTextAlignment="Center" TextColor="White" FontSize="Small"/>
+      <Entry Text="35" TextColor="White" BackgroundColor="Transparent" Grid.Column="1" FontSize="Small"/>
+      <Label Text="Interests:" VerticalTextAlignment="Center" TextColor="White" Grid.Row="1" FontSize="Small"/>
+      <Entry Text="Xamarin.Forms" TextColor="White" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1" FontSize="Small"/>
+      <Label Text="Ask Me:" VerticalTextAlignment="Center" TextColor="White" Grid.Row="2" FontSize="Small"/>
+      <Entry Text="Xamarin, C#, .Net, Mono" TextColor="White" BackgroundColor="Transparent" Grid.Row="2" Grid.Column="1" FontSize="Small"/>
+    </Grid>
+  </RelativeLayout>
+</ContentPage>
