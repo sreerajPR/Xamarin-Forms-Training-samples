@@ -12,8 +12,6 @@ namespace XAMLTraining
     public MainPage()
     {
       InitializeComponent();
-      slider.Minimum = 0;
-      slider.Maximum = 100;
     }
     void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
     {

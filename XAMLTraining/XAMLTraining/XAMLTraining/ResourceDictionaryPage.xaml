@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XAMLTraining"
              x:Class="XAMLTraining.ResourceDictionaryPage">
   <ContentPage.Resources>
     <ResourceDictionary>
@@ -25,20 +26,20 @@
   </ContentPage.Resources>
 
   <StackLayout>
-<!--
+
     <StackLayout.Resources>
-    <ResourceDictionary>
-      <Color x:Key="textColor">Blue</Color>
-    </ResourceDictionary>
+      <ResourceDictionary>
+        <Color x:Key="textColor">Blue</Color>
+      </ResourceDictionary>
     </StackLayout.Resources>
--->
+
     <Button Text="Do this!"
                 HorizontalOptions="{StaticResource horzOptions}"
                 VerticalOptions="{StaticResource vertOptions}"
                 BorderWidth="{StaticResource borderWidth}"
                 Rotation="{StaticResource rotationAngle}"
                 TextColor="{StaticResource textColor}"/>
-    
+
 
     <Button Text="Do that!"
                 HorizontalOptions="{StaticResource horzOptions}"
@@ -52,7 +53,15 @@
                 VerticalOptions="{StaticResource vertOptions}"
                 BorderWidth="{StaticResource borderWidth}"
                 Rotation="{StaticResource rotationAngle}"
-                TextColor="{StaticResource textColor}"/> 
+                TextColor="{StaticResource textColor}"/>
+
+    <Button Text="Do the last thing!"
+                HorizontalOptions="{StaticResource horzOptions}"
+                VerticalOptions="{StaticResource vertOptions}"
+                BorderWidth="{StaticResource borderWidth}"
+                Rotation="{StaticResource rotationAngle}"
+                TextColor="{x:Static local:AppConstants.ForegroundColor}"
+            BackgroundColor="{x:Static local:AppConstants.BackgroundColor}"/>
 
   </StackLayout>
 </ContentPage>
