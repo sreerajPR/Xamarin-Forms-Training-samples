@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataBindingPractical"
+             x:Class="DataBindingPractical.MainPage">
+  <ContentPage.BindingContext>
+    <local:CalculatorViewmodel/>
+  </ContentPage.BindingContext>
+  <Grid BackgroundColor="Black" RowSpacing="1" ColumnSpacing="1">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="3*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <Label  Text="{Binding Result}" Grid.ColumnSpan="4" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="Black" BackgroundColor="White"/>
+    <Button Text="7" Command="{Binding AddCharacter}" CommandParameter="7" TextColor="Black" BackgroundColor="White" Grid.Row="1"/>
+    <Button Text="8"  Command="{Binding AddCharacter}" CommandParameter="8" TextColor="Black" BackgroundColor="White" Grid.Row="1" Grid.Column="1"/>
+    <Button Text="9" Command="{Binding AddCharacter}" CommandParameter="9"  TextColor="Black" BackgroundColor="White" Grid.Row="1" Grid.Column="2"/>
+    <Button Text="/"  Command="{Binding AddOperator}" CommandParameter="{x:Static local:Operator.Divide}" TextColor="Black" BackgroundColor="White" Grid.Row="1" Grid.Column="3"/>
+
+    <Button Text="4" Command="{Binding AddCharacter}" CommandParameter="4"  TextColor="Black" BackgroundColor="White" Grid.Row="2"/>
+    <Button Text="5" Command="{Binding AddCharacter}" CommandParameter="5"  TextColor="Black" BackgroundColor="White" Grid.Row="2" Grid.Column="1"/>
+    <Button Text="6" Command="{Binding AddCharacter}" CommandParameter="6"  TextColor="Black" BackgroundColor="White" Grid.Row="2" Grid.Column="2"/>
+    <Button Text="*"  Command="{Binding AddOperator}" CommandParameter="{x:Static local:Operator.Multiply}" TextColor="Black" BackgroundColor="White" Grid.Row="2" Grid.Column="3"/>
+
+    <Button Text="1" Command="{Binding AddCharacter}" CommandParameter="1" TextColor="Black" BackgroundColor="White" Grid.Row="3"/>
+    <Button Text="2" Command="{Binding AddCharacter}" CommandParameter="2" TextColor="Black" BackgroundColor="White" Grid.Row="3" Grid.Column="1"/>
+    <Button Text="3" Command="{Binding AddCharacter}" CommandParameter="3" TextColor="Black" BackgroundColor="White" Grid.Row="3" Grid.Column="2"/>
+    <Button Text="-" Command="{Binding AddOperator}" CommandParameter="{x:Static local:Operator.Subtract}" TextColor="Black" BackgroundColor="White" Grid.Row="3" Grid.Column="3"/>
+
+    <Button Text="CE" Command="{Binding ClearAll}" TextColor="Black" BackgroundColor="White" Grid.Row="4" Grid.ColumnSpan="2"/>
+    <Button Text="0" Command="{Binding AddCharacter}" CommandParameter="0" TextColor="Black" BackgroundColor="White" Grid.Row="4" Grid.Column="2"/>
+    <Button Text="+" Command="{Binding AddOperator}" CommandParameter="{x:Static local:Operator.Add}" TextColor="Black" BackgroundColor="White" Grid.Row="4" Grid.Column="3"/>
+    
+    <Button Text="=" Command="{Binding Evaluate}" TextColor="Black" BackgroundColor="White" Grid.Row="5"  Grid.ColumnSpan="4"/>
+
+    
+  </Grid>
+
+</ContentPage>
