@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StylesDemo"
+             x:Class="StylesDemo.MainPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="tealLabelStyle" TargetType="Label"
+                   BasedOn="{StaticResource baseStyle}">
+        <Setter Property="TextColor" Value="Teal" />
+      </Style>
+      <Style x:Key="redLabelStyle" TargetType="Label"
+                   BasedOn="{StaticResource baseStyle}">
+        <Setter Property="TextColor" Value="Red" />
+      </Style>
+      <Style TargetType="Label" BasedOn="{StaticResource baseStyle}">
+        <Setter Property="TextColor" Value="Blue" />
+      </Style>
+      <!--
+      <Style x:Key="buttonStyle" TargetType="Button"
+                   BasedOn="{StaticResource baseStyle}">
+        <Setter Property="BorderColor" Value="Lime" />
+      </Style>
+      -->
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <StackLayout Padding="5">
+    <Label Text="Teal Label" Style="{StaticResource tealLabelStyle}" />
+    <Label Text="Red Label" Style="{StaticResource redLabelStyle}" />
+    <Label Text="Label acquiring implicit Style. Note that we haven't mentioned any Style as attribute"/>
+    <Label Text="Teal Label but with DarkSalmon Color" Style="{StaticResource tealLabelStyle}">
+      <Label.Resources>
+        <ResourceDictionary>
+          <Style x:Key="tealLabelStyle" TargetType="Label"
+                   BasedOn="{StaticResource baseStyle}">
+            <Setter Property="TextColor" Value="DarkSalmon" />
+          </Style>
+        </ResourceDictionary>
+      </Label.Resources>
+    </Label>
+
+    <!--
+    <Label Text="Dynamic Style Label" Style="{DynamicResource dynamicLabelStyleResource}"/>
+    <Button Text="Change Label Style" Style="{StaticResource buttonStyle}" Clicked="Button_Clicked"/>
+    
+    -->
+  </StackLayout>
+
+</ContentPage>
