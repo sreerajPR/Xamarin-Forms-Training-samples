@@ -3,6 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DataBindingPractical"
              x:Class="DataBindingPractical.MainPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Button" x:Key="BaseButtonKey">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+      </Style>
+      <Style TargetType="Button" x:Key="AddCharacterButtonKey" BasedOn="{StaticResource BaseButtonKey}">
+        <Setter Property="Command" Value="{Binding AddCharacter}"/>
+      </Style>
+      <Style TargetType="Button" x:Key="AddOperatorButtonKey" BasedOn="{StaticResource BaseButtonKey}">
+        <Setter Property="Command" Value="{Binding AddOperator}"/>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
   <ContentPage.BindingContext>
     <local:CalculatorViewmodel/>
   </ContentPage.BindingContext>
@@ -24,28 +38,28 @@
     </Grid.ColumnDefinitions>
 
     <Label  Text="{Binding Result}" Grid.ColumnSpan="4" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="Black" BackgroundColor="White"/>
-    <Button Text="7" Command="{Binding AddCharacter}" CommandParameter="7" TextColor="Black" BackgroundColor="White" Grid.Row="1"/>
-    <Button Text="8"  Command="{Binding AddCharacter}" CommandParameter="8" TextColor="Black" BackgroundColor="White" Grid.Row="1" Grid.Column="1"/>
-    <Button Text="9" Command="{Binding AddCharacter}" CommandParameter="9"  TextColor="Black" BackgroundColor="White" Grid.Row="1" Grid.Column="2"/>
-    <Button Text="/"  Command="{Binding AddOperator}" CommandParameter="{x:Static local:Operator.Divide}" TextColor="Black" BackgroundColor="White" Grid.Row="1" Grid.Column="3"/>
 
-    <Button Text="4" Command="{Binding AddCharacter}" CommandParameter="4"  TextColor="Black" BackgroundColor="White" Grid.Row="2"/>
-    <Button Text="5" Command="{Binding AddCharacter}" CommandParameter="5"  TextColor="Black" BackgroundColor="White" Grid.Row="2" Grid.Column="1"/>
-    <Button Text="6" Command="{Binding AddCharacter}" CommandParameter="6"  TextColor="Black" BackgroundColor="White" Grid.Row="2" Grid.Column="2"/>
-    <Button Text="*"  Command="{Binding AddOperator}" CommandParameter="{x:Static local:Operator.Multiply}" TextColor="Black" BackgroundColor="White" Grid.Row="2" Grid.Column="3"/>
+    <Button Text="7"  Style="{StaticResource AddCharacterButtonKey}" CommandParameter="7" Grid.Row="1"/>
+    <Button Text="8"   Style="{StaticResource AddCharacterButtonKey}" CommandParameter="8" Grid.Row="1" Grid.Column="1"/>
+    <Button Text="9" Style="{StaticResource AddCharacterButtonKey}" CommandParameter="9" Grid.Row="1" Grid.Column="2"/>
+    <Button Text="/"  Style="{StaticResource AddOperatorButtonKey}" CommandParameter="{x:Static local:Operator.Divide}" Grid.Row="1" Grid.Column="3"/>
 
-    <Button Text="1" Command="{Binding AddCharacter}" CommandParameter="1" TextColor="Black" BackgroundColor="White" Grid.Row="3"/>
-    <Button Text="2" Command="{Binding AddCharacter}" CommandParameter="2" TextColor="Black" BackgroundColor="White" Grid.Row="3" Grid.Column="1"/>
-    <Button Text="3" Command="{Binding AddCharacter}" CommandParameter="3" TextColor="Black" BackgroundColor="White" Grid.Row="3" Grid.Column="2"/>
-    <Button Text="-" Command="{Binding AddOperator}" CommandParameter="{x:Static local:Operator.Subtract}" TextColor="Black" BackgroundColor="White" Grid.Row="3" Grid.Column="3"/>
+    <Button Text="4" Style="{StaticResource AddCharacterButtonKey}" CommandParameter="4"  Grid.Row="2"/>
+    <Button Text="5" Style="{StaticResource AddCharacterButtonKey}" CommandParameter="5"  Grid.Row="2" Grid.Column="1"/>
+    <Button Text="6" Style="{StaticResource AddCharacterButtonKey}" CommandParameter="6"   Grid.Row="2" Grid.Column="2"/>
+    <Button Text="*" Style="{StaticResource AddOperatorButtonKey}" CommandParameter="{x:Static local:Operator.Multiply}" Grid.Row="2" Grid.Column="3"/>
 
-    <Button Text="CE" Command="{Binding ClearAll}" TextColor="Black" BackgroundColor="White" Grid.Row="4" Grid.ColumnSpan="2"/>
-    <Button Text="0" Command="{Binding AddCharacter}" CommandParameter="0" TextColor="Black" BackgroundColor="White" Grid.Row="4" Grid.Column="2"/>
-    <Button Text="+" Command="{Binding AddOperator}" CommandParameter="{x:Static local:Operator.Add}" TextColor="Black" BackgroundColor="White" Grid.Row="4" Grid.Column="3"/>
-    
-    <Button Text="=" Command="{Binding Evaluate}" TextColor="Black" BackgroundColor="White" Grid.Row="5"  Grid.ColumnSpan="4"/>
+    <Button Text="1" Style="{StaticResource AddCharacterButtonKey}" CommandParameter="1"  Grid.Row="3"/>
+    <Button Text="2" Style="{StaticResource AddCharacterButtonKey}" CommandParameter="2"  Grid.Row="3" Grid.Column="1"/>
+    <Button Text="3" Style="{StaticResource AddCharacterButtonKey}" CommandParameter="3" Grid.Row="3" Grid.Column="2"/>
+    <Button Text="-" Style="{StaticResource AddOperatorButtonKey}" CommandParameter="{x:Static local:Operator.Subtract}" Grid.Row="3" Grid.Column="3"/>
 
-    
+    <Button Text="CE" Style="{StaticResource BaseButtonKey}" Command="{Binding ClearAll}" Grid.Row="4" Grid.ColumnSpan="2"/>
+    <Button Text="0" Style="{StaticResource AddCharacterButtonKey}" CommandParameter="0" Grid.Row="4" Grid.Column="2"/>
+    <Button Text="+" Style="{StaticResource AddOperatorButtonKey}" CommandParameter="{x:Static local:Operator.Add}" Grid.Row="4" Grid.Column="3"/>
+
+    <Button Text="="  Style="{StaticResource BaseButtonKey}" Command="{Binding Evaluate}" Grid.Row="5" Grid.ColumnSpan="4"/>
+
   </Grid>
 
 </ContentPage>
