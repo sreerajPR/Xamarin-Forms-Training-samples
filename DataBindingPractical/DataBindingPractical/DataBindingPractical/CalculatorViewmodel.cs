@@ -46,6 +46,7 @@ namespace DataBindingPractical
           if (shouldClearResult)
           {
             Result = string.Empty;
+            shouldClearResult = false;
           }
           Result = Result + character;
         });
