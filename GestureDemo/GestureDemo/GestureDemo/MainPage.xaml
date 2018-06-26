@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GestureDemo"
+             x:Class="GestureDemo.MainPage">
+  <BoxView x:Name="blueBox" BackgroundColor="Blue" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center">
+    <BoxView.GestureRecognizers>
+      <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="2"/>
+      <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated"/>
+    </BoxView.GestureRecognizers>
+  </BoxView>
+</ContentPage>
