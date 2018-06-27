@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace ListviewDemo
@@ -134,6 +135,17 @@ namespace ListviewDemo
       }
     }
 
+
+    public ICommand OnMore
+    {
+      get
+      {
+        return new Command<ListItemModel>((param) =>
+       {
+         App.Current.MainPage.DisplayAlert("Context Action", param.Topic, "Cancel");
+       });
+      }
+    }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
