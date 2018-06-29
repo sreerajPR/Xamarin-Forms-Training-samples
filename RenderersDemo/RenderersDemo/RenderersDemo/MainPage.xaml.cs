@@ -16,13 +16,16 @@ namespace RenderersDemo
     {
       InitializeComponent();
 
-      myEntry = new MyEntry() {  VerticalOptions = LayoutOptions.CenterAndExpand, HasBorder = false };
+      
+      myEntry = new MyEntry() {  VerticalOptions = LayoutOptions.CenterAndExpand, HasBorder = true };
 
-      mySwitch = new Switch() { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.CenterAndExpand };
+       mySwitch = new Switch() { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.CenterAndExpand };
 
-      StackLayout stackLayout = new StackLayout() { Children = { myEntry, mySwitch }, Padding = new Thickness(5) };
+       StackLayout stackLayout = new StackLayout() { Children = { myEntry, mySwitch }, Padding = new Thickness(5) };
 
-      Content = stackLayout;
+       Content = stackLayout;
+
+      //Content = new Entry() { VerticalOptions = LayoutOptions.CenterAndExpand, BackgroundColor = Xamarin.Forms.Color.OrangeRed };
 
       mySwitch.Toggled += MySwitch_Toggled;
     }
